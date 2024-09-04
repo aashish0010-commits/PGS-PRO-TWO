@@ -1,0 +1,9 @@
+.nav-item a:hover{
+    color: #61a3f8;
+    transition: color 0.2s ease-in-out 0.1s;
+}
+
+.foot a:hover{
+    color: #61a3f8;
+    transition: color 0.2s ease-in-out 0.1s;
+}
