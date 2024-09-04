@@ -76,7 +76,7 @@ function Footer() {
               </li>
               <li>
                 <a href="#">
-                  <i className="bi bi-globe pr-2"></i>www.danphecare.com / www.danphehealth.com
+                  <i className="bi bi-globe pr-2"></i>www.smartcare.com / www.smartcareconnect.com
                 </a>
               </li>
             </ul>
