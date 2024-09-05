@@ -22,7 +22,7 @@ function page() {
               guidance and support in a dynamic environment.
             </p>
             <p className="mt-4 text-sm lg:text-base">Check out our open
-              roles below &ndash; if you don't see one that matches your talents,
+              roles below &ndash; if you don&rsquo;t see one that matches your talents,
               please send message on <a className="text-[#207EF7]" href="">info@danphehealth.com</a></p>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end order-2 lg:order-2 pt-5 md:pt-6 lg:pt-0">
