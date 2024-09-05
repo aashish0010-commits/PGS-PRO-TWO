@@ -10,11 +10,11 @@
 .swiper-button-prev:after,  .swiper-button-next:after{
     border: solid;
     border-radius: 100%;
-    font-size: medium;
+    font-size:large;
     font-weight: bold;
     text-align: center;
-    width: 90%;
-    padding: 2px;
+    width: 100%;
+    padding: 3px;
     background-color: #61a3f8;
     color: white;
 }
