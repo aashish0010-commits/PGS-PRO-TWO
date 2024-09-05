@@ -400,10 +400,12 @@ function Page() {
           <div className="flex flex-col-reverse md:flex-row justify-center items-center bg-white overflow-visible">
             <div className="w-full lg:w-1/2 p-4 md:py-4 bg-gray-100 rounded-md shadow-xl shadow-slate-300 md:relative left-5">
               <div className="flex items-center mb-4">
-                <img
-                  src="https://img.icons8.com/ios-filled/50/4caf50/hospital-room.png"
+                <Image
+                  src="/images/icon-1.png"
                   alt="Icon"
                   className="w-10 h-10 mr-4"
+                  width={100}
+                  height={0}
                 />
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800">
