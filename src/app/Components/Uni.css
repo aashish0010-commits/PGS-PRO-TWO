@@ -8,16 +8,13 @@
 }
 
 .swiper-button-prev:after,  .swiper-button-next:after{
-  display: inline-block;  
-  border: solid;
+    border: solid;
     border-radius: 100%;
-    font-size: small;
+    font-size:large;
     font-weight: bold;
     text-align: center;
-    width: 32px;
-    height: 32px;
-    line-height: 20px;
-    padding: 4px;
+    width: 100%;
+    padding: 3px;
     background-color: #61a3f8;
     color: white;
 }
