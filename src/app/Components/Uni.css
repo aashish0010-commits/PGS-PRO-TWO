@@ -8,15 +8,11 @@
 }
 
 .swiper-button-prev:after,  .swiper-button-next:after{
-    border: solid;
-    border-radius: 100%;
     font-size:large;
     font-weight: bold;
     text-align: center;
     width: 100%;
-    padding: 3px;
-    background-color: #61a3f8;
-    color: white;
+    color: #61a3f8;
 }
 
 .swiper-pagination-bullet-active{
