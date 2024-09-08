@@ -317,7 +317,7 @@ function Page() {
               },
             }}
             modules={[Navigation]}
-            className="mySwiper secswipe border rounded-md shadow-blue-400 shadow-lg lg:w-[70%]"
+            className="mySwiper secswipe border rounded-md shadow-blue-400 shadow-lg lg:w-[80%]"
           >
             {services.map((service, index) => (
               <SwiperSlide
