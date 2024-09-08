@@ -8,10 +8,9 @@
 }
 
 .swiper-button-prev:after,  .swiper-button-next:after{
-    font-size:large;
+    font-size: medium;
     font-weight: bold;
     text-align: center;
-    width: 100%;
     color: #61a3f8;
 }
 
