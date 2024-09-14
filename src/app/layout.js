@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import FloatingButton from "./Components/FloatingButton";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         {children}
+        <FloatingButton />
         <Footer />
         
         </body>

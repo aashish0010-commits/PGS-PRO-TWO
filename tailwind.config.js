@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        customPrimary: "#6A99F0", // All Rounder
+        customSecondary: "#207EF7", // Button color 
+        customDark: "#07092B", // Dark Blue
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

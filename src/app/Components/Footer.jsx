@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <section className="bg-[#212529] py-8">
-      <div className="container mx-auto px-5">
+      <div className="container mx-auto px-5 md:px-12">
         <div className="flex flex-wrap md:flex-nowrap justify-between">
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <h3 className="text-lg text-white mb-3">Site Menu</h3>
@@ -83,11 +83,11 @@ function Footer() {
           </div>
         </div>
         <div className="text-white text-xs py-4 flex justify-between items-center border-t border-[#ffffff33] mt-8">
-          <div>
+          <div className="md:w-0 w-1/2">
             <h4>Copyright 2024. All Rights Reserved.</h4>
           </div>
           <div>
-            <ul className="flex gap-4">
+            <ul className="flex gap-4 md:mr-4 mr-6">
               <li>
                 <a href="#">
                   <i className="bi bi-facebook"></i>

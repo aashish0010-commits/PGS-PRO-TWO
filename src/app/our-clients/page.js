@@ -293,13 +293,13 @@ const hospitals = [
 function page() {
   return (
     <>
- <section className="md:p-8 p-4 pt-[175px] md:pt-[150px]">
+ <section className="md:p-12 p-6 pt-[175px] md:pt-[150px]">
   <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-1">
     {hospitals.map((hospital) => (
       <a href="" key={hospital.id}>
         <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4 md:h-[250px] h-[300px]">
           <div className="flex justify-between items-center mb-4">
-            <span className="text-sm font-medium text-white bg-[#6A99F0] px-2 py-1 rounded">
+            <span className="text-sm font-medium text-white bg-customPrimary px-2 py-1 rounded">
               {hospital.category}
             </span>
           </div>

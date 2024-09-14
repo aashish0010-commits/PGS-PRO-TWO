@@ -8,7 +8,7 @@ function page() {
       title: "Patient Administration",
       description:
         "This system assists patients in scheduling appointments online, as well as registering walk-in patients. It facilitates the collection ...",
-      icon: "https://danphehealth.com/storage/uploads/pCqJyn1pu7uF8Xe01RcdhS8Z7SUXL0H0pTgFaziI.svg", // Replace with actual icon source
+      icon: "https://danphehealth.com/storage/uploads/pCqJyn1pu7uF8Xe01RcdhS8Z7SUXL0H0pTgFaziI.svg", 
     },
     {
       title: "OPD Management",
@@ -147,14 +147,14 @@ function page() {
 
   return (
     <>
-      <section className="md:p-8 p-4 pt-[175px] md:pt-[150px]">
+      <section className="md:p-12 p-4 pt-[175px] md:pt-[150px]">
         <div className="container mx-auto p-4 bg-[#F2FBF8] text-black rounded-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="space-y-4">
                 <h1 className="text-2xl lg:text-4xl font-bold mb-4">
                   Unleash Efficiency with <br />
-                  <span className="text-[#6A99F0]">Our HIMS Modules!</span>
+                  <span className="text-customPrimary">Our HIMS Modules!</span>
                 </h1>
                 <p className="mb-4">
                   Discover streamlined healthcare finances with our
@@ -163,10 +163,10 @@ function page() {
                 </p>
               </div>
               <div className="md:mt-8 mt-5">
-                <button className="md:mt-5 md:py-3 py-2 md:px-4 px-2 rounded-md bg-[#07092B] text-white hover:bg-[#207EF7] text-start">
-                  <i className="bi bi-calendar2-minus-fill pr-2"></i>
-                  Schedule a Demo
-                </button>
+              <button className="mt-5 py-3 px-3 rounded-md bg-customSecondary text-white hover:bg-[#07092B] transition-colors duration-500 ease-in-out">
+                      <i className="bi bi-calendar2-minus-fill pr-2"></i>
+                      Schedule a Demo
+                    </button>
               </div>
             </div>
 
@@ -186,11 +186,11 @@ function page() {
       </section>
 
       <section className="pb-10">
-        <div className="container mx-auto md:p-8 p-4">
+        <div className="container mx-auto md:p-12 p-10">
           <div className="text-center mb-10">
             <h1 className="text-2xl lg:text-4xl font-bold mb-4">
               Explore our
-              <span className="text-[#6A99F0]"> HIMS</span> Module
+              <span className="text-customPrimary"> HIMS</span> Module
             </h1>
             <p className="text-gray-600 mt-2">
               Precision in Healthcare Information Management
@@ -220,8 +220,8 @@ function page() {
                 <div className="mt-4 flex">
                   <a
                     href="#"
-                    className="text-[#6A99F0] hover:text-white hover:bg-[#207EF7] border-2
-              hover:border-transparent border-[#6A99F0] rounded-full flex items-center justify-center w-9 h-9 "
+                    className="text-customPrimary hover:text-white hover:bg-customSecondary border-2
+              hover:border-transparent border-customPrimary rounded-full flex items-center justify-center w-9 h-9 "
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -246,11 +246,11 @@ function page() {
       </section>
 
       <section>
-  <div className="container mx-auto md:p-8 p-4">
+  <div className="container mx-auto md:p-12 p-10">
     <div className="text-center mb-4">
       <h1 className="text-2xl lg:text-4xl font-bold mb-4">
         Find the Platform that is
-        <span className="text-[#6A99F0]"> Right for You</span>
+        <span className="text-customPrimary"> Right for You</span>
       </h1>
       <p className="text-gray-600 mt-2">
         Align it with your audience, content, and goals for maximum impact and growth.
@@ -364,7 +364,7 @@ function page() {
 </section>
 
 <section>
-  <div className="container mx-auto md:p-8 p-4">
+  <div className="container mx-auto md:p-12 p-4">
     <div className="rounded-2xl flex flex-col md:flex-row justify-between items-center bg-[#F2FBF8] py-10">
       <div className="w-full md:w-1/4 mb-6 md:mb-0 hidden md:block">
         <Image
@@ -378,7 +378,7 @@ function page() {
 
       <div className="w-full md:w-2/3 text-start md:text-left p-4">
         <h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
-          <span className="text-[#61a3f8]">
+          <span className="text-customPrimary">
             Subscribe for a Transformative Demo
           </span>
           <br />
@@ -396,7 +396,7 @@ function page() {
             placeholder="Enter Email"
             className="flex-grow px-4 py-4 focus:outline-none"
           />
-          <button className="bg-[#07092B] text-white hover:bg-[#207EF7] font-semibold px-6 py-3 md:rounded-md rounded-lg">
+           <button className="bg-customSecondary text-white hover:bg-customDark font-semibold px-6 py-3 md:rounded-none rounded-lg transition-colors duration-500 ease-in-out">
             SUBSCRIBE
           </button>
         </div>

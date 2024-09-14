@@ -1,13 +1,4 @@
-.nav-item a:hover{
-    transition: color 0.2s ease-in-out 0.1s;
-}
-
-.foot a:hover{
-    color: #61a3f8;
-    transition: color 0.2s ease-in-out 0.1s;
-}
-
-.swiper-button-prev:after,  .swiper-button-next:after{
+.swiper-button-prev:after, .swiper-button-next:after{
     font-size: medium;
     font-weight: bold;
     text-align: center;
@@ -25,16 +16,11 @@
 }
 
 .swiper {
-    height: 400px;
+    height: 450px;
 }
 
 .secswipe{
     max-height: 100px;
-}
-
-.icon,
-.text {
-  transition: color 0.3s ease;
 }
 
 .underline {
@@ -44,7 +30,6 @@
   right: 0;
   height: 3px; 
   background-color: transparent;
-  transition: background-color 0.3s ease;
 }
 
 .text-center:hover .underline,
@@ -60,6 +45,7 @@
 .text-center.hover .text,
 .text-center.active .text {
   color: #61a3f8; 
+  transition: color 0.5s ease;
 }
 
 .underline-active {
@@ -85,14 +71,19 @@
   transform: scale(1.1); 
 }
 
-.swiper-slide-active h4 {
+.swiper-slide-custom-active h4 {
   color: #6A99F0; 
 }
 
-.swiper-slide-active p {
+.swiper-slide-custom-active p {
   color: #4b5563; 
 }
 
 .mySwipertwo{
   height: 370px;
+}
+
+.foot a:hover{
+  color: #61a3f8;
+  transition: color 0.2s ease-in-out 0.5s;
 }

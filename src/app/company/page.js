@@ -154,11 +154,11 @@ function page() {
       </section>
 
       <section className="py-10">
-        <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center p-4 md:p-8 ">
+        <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center p-9 md:p-12 ">
           <div className="w-full lg:w-1/2 flex flex-col items-start order-1 lg:order-1">
             <h1 className="text-xl lg:text-4xl font-bold">
               Empowering Healthcare Through{" "}
-              <span className="text-[#6A99F0]">
+              <span className="text-customPrimary ">
                 Customized Software Solutions
               </span>
             </h1>
@@ -187,10 +187,11 @@ function page() {
         </div>
       </section>
 
-      <section className="bg-[#F2FBF8] pb-10">
-        <div className="container mx-auto p-4 md:p-8 text-center">
+      <section className="bg-[#F2FBF8] md:pb-10">
+        <div className="container mx-auto p-10 md:p-8 text-center">
           <h1 className="text-xl lg:text-4xl font-bold ">
-            Choose <span className="text-[#6A99F0]">SmartCare Connect For</span>
+            Choose{" "}
+            <span className="text-customPrimary">SmartCare Connect For</span>
           </h1>
           <p className="mt-2 md:mt-4 text-sm md:text-lg">
             SmartCare offers a top-notch, affordable Hospital Management
@@ -199,7 +200,7 @@ function page() {
           </p>
         </div>
 
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto md:p-4 p-10">
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
@@ -253,14 +254,14 @@ function page() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-gray-100 to-gray-300 p-4 md:p-8 rounded-lg shadow-lg">
+      <section className="bg-gradient-to-r from-gray-100 to-gray-300 p-10 md:p-12 rounded-lg shadow-lg">
         <div className="text-center mb-6 md:mb-8">
           <h1 className="text-xl md:text-2xl lg:text-4xl font-bold">
             Unveiling Our Pillars of Strength
           </h1>
           <p className="mt-2 md:mt-4 text-sm md:text-lg">
-            The Core Attributes and Values that Propel SmartCare Connect. Forward in
-            Excellence, Innovation, and Client-Centric Success.
+            The Core Attributes and Values that Propel SmartCare Connect.
+            Forward in Excellence, Innovation, and Client-Centric Success.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
@@ -292,10 +293,10 @@ function page() {
       </section>
 
       <section className="py-10">
-        <div className="container mx-auto md:p-8 p-4 space-y-8">
+        <div className="container mx-auto md:p-12 p-10 space-y-8">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
             Professional Team Members of{" "}
-            <span className="text-[#6A99F0]">SmartCare Connect</span>
+            <span className="text-customPrimary">SmartCare Connect</span>
           </h1>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {card.map((person, index) => (
@@ -324,73 +325,74 @@ function page() {
         </div>
       </section>
 
-      <section className="md:p-8 p-4">
-  <div className="container mx-auto p-4 bg-[#F2FBF8] text-black rounded-xl">
-    <h1 className="text-xl lg:text-4xl font-bold md:text-center mb-4">
-      SmartCare Solutions & Services Overview
-    </h1>
-    <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 justify-center mb-10">
-      <button className="bg-white text-[#6A99F0] hover:bg-[#207EF7] hover:text-white px-4 py-2 rounded-lg shadow-md shadow-slate-300">
-        SmartCare HMIS with EHR
-      </button>
-      <button className="bg-white text-[#6A99F0] hover:bg-[#207EF7] hover:text-white px-4 py-2 rounded-lg shadow-md shadow-slate-300">
-        Telemedicine
-      </button>
-      <button className="bg-white text-[#6A99F0] hover:bg-[#207EF7] hover:text-white px-4 py-2 rounded-lg shadow-md shadow-slate-300">
-        SmartCare Services
-      </button>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div>
-        <div className="space-y-4">
-          <h2 className="text-xl md:text-2xl font-semibold">
-            Patient Management
-          </h2>
-          <p className="mb-4">
-            Smart Care Patient Management involves comprehensive health services to
-            assist patient in managing their health practices like online
-            appointment, queue management through WEB and APP management.
-          </p>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Patient Master Setup</li>
-            <li>Online Appointment Scheduling</li>
-            <li>Patient Registration</li>
-            <li>ADT (Admission, Discharge & Transfer)</li>
-            <li>Referral Management</li>
-            <li>Medical Records</li>
-            <li>Queue & Token Management</li>
-            <li>Patient APP</li>
-          </ul>
-        </div>
+      <section className="md:p-12 p-10">
+        <div className="container mx-auto p-4 bg-[#F2FBF8] text-black rounded-xl">
+          <h1 className="text-xl lg:text-4xl font-bold md:text-center mb-4">
+            SmartCare Solutions & Services Overview
+          </h1>
+          <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 justify-center mb-10">
+            <button className="bg-white text-customPrimary hover:bg-customSecondary hover:text-white px-4 py-2 rounded-lg shadow-md shadow-slate-300">
+              SmartCare HMIS with EHR
+            </button>
+            <button className="bg-white text-customPrimary hover:bg-customSecondary hover:text-white px-4 py-2 rounded-lg shadow-md shadow-slate-300">
+              Telemedicine
+            </button>
+            <button className="bg-white text-customPrimary hover:bg-customSecondary hover:text-white px-4 py-2 rounded-lg shadow-md shadow-slate-300">
+              SmartCare Services
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="space-y-4">
+                <h2 className="text-xl md:text-2xl font-semibold">
+                  Patient Management
+                </h2>
+                <p className="mb-4">
+                  Smart Care Patient Management involves comprehensive health
+                  services to assist patient in managing their health practices
+                  like online appointment, queue management through WEB and APP
+                  management.
+                </p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Patient Master Setup</li>
+                  <li>Online Appointment Scheduling</li>
+                  <li>Patient Registration</li>
+                  <li>ADT (Admission, Discharge & Transfer)</li>
+                  <li>Referral Management</li>
+                  <li>Medical Records</li>
+                  <li>Queue & Token Management</li>
+                  <li>Patient APP</li>
+                </ul>
+              </div>
 
-        <div className="space-y-2 mt-8">
-          <h2 className="text-gray-400">Materials (goods) Management</h2>
-          <h2 className="text-gray-400">Revenue Management</h2>
-        </div>
+              <div className="space-y-2 mt-8">
+                <h2 className="text-gray-400">Materials (goods) Management</h2>
+                <h2 className="text-gray-400">Revenue Management</h2>
+              </div>
 
-        <div className="mt-8">
-          <button className="bg-white text-[#6A99F0] hover:bg-[#207EF7] hover:text-white px-6 py-2 rounded-lg shadow-md shadow-slate-300">
-            View All
-          </button>
-        </div>
-      </div>
+              <div className="mt-8">
+                <button className=" bg-customSecondary text-white hover:bg-customDark transition-colors duration-500 ease-in-out px-6 py-2 rounded-lg shadow-md shadow-slate-300">
+                  View All
+                </button>
+              </div>
+            </div>
 
-      <div className="hidden md:block">
-        <div className="relative">
-          <Image
-            src="https://danphehealth.com/frontend/img/Group%204724.png"
-            alt="DANPHE Dashboard"
-            width={600}
-            height={0}
-            className="rounded-lg"
-          />
+            <div className="hidden md:block">
+              <div className="relative">
+                <Image
+                  src="https://danphehealth.com/frontend/img/Group%204724.png"
+                  alt="DANPHE Dashboard"
+                  width={600}
+                  height={0}
+                  className="rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<section className="md:p-8 p-4">
+      <section className="md:p-12 p-4">
         <div className="container mx-auto text-center md:space-y-10 bg-[#F2FBF8] rounded-xl p-4">
           <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
             Trusted by
@@ -398,69 +400,66 @@ function page() {
           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-8 mb-8 md:p-0 p-4">
             {logos.map((logo, index) => (
               <div key={index} className="flex justify-center items-center">
-               <a href=""> <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={120} // Adjust the width as needed
-                  height={60} // Adjust the height as needed
-                  className="object-contain"
-                /></a>
+                <a href="">
+                  {" "}
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={120} // Adjust the width as needed
+                    height={60} // Adjust the height as needed
+                    className="object-contain"
+                  />
+                </a>
               </div>
             ))}
           </div>
-          <button className="px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition">
+          <button className="px-6 py-2 bg-customSecondary text-white rounded-full hover:bg-[#070928] transition-colors duration-500 ease-in-out">
             View All <i class="bi bi-arrow-right-short"></i>
           </button>
         </div>
       </section>
 
       <section>
-  <div className="container mx-auto md:p-8 p-4">
-    <div className="rounded-2xl flex flex-col md:flex-row justify-between items-center bg-[#F2FBF8] py-10">
-      <div className="w-full md:w-1/4 mb-6 md:mb-0 hidden md:block">
-        <Image
-          src="https://danphehealth.com/frontend/img/doctor.png"
-          alt="img"
-          width={300}
-          height={0}
-          className="object-contain mx-auto"
-        />
-      </div>
+        <div className="container mx-auto md:p-12 p-4">
+          <div className="rounded-2xl flex flex-col md:flex-row justify-between items-center bg-[#F2FBF8] py-10">
+            <div className="w-full md:w-1/4 mb-6 md:mb-0 hidden md:block">
+              <Image
+                src="https://danphehealth.com/frontend/img/doctor.png"
+                alt="img"
+                width={300}
+                height={0}
+                className="object-contain mx-auto"
+              />
+            </div>
 
-      <div className="w-full md:w-2/3 text-start md:text-left p-4">
-        <h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
-          <span className="text-[#61a3f8]">
-            Subscribe for a Transformative Demo
-          </span>
-          <br />
-          of Our Cutting-Edge Solutions!
-        </h1>
-        <p className="text-base text-[#3D3D3D] py-3">
-          Subscribe now for a personalized demo and unlock the future with
-          innovative solutions tailored to enhance efficiency and elevate
-          your overall experience.
-        </p>
+            <div className="w-full md:w-2/3 text-start md:text-left p-4">
+              <h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
+                <span className="text-customPrimary">
+                  Subscribe for a Transformative Demo
+                </span>
+                <br />
+                of Our Cutting-Edge Solutions!
+              </h1>
+              <p className="text-base text-[#3D3D3D] py-3">
+                Subscribe now for a personalized demo and unlock the future with
+                innovative solutions tailored to enhance efficiency and elevate
+                your overall experience.
+              </p>
 
-        <div className="md:flex md:space-y-0 space-y-2 items-center md:border rounded-lg overflow-hidden w-full md:w-96 mx-auto md:mx-0">
-          <input
-            type="email"
-            placeholder="Enter Email"
-            className="flex-grow px-4 py-4 focus:outline-none"
-          />
-          <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 md:rounded-none rounded-lg">
-            SUBSCRIBE
-          </button>
+              <div className="md:flex md:space-y-0 space-y-2 items-center md:border rounded-lg overflow-hidden w-full md:w-96 mx-auto md:mx-0">
+                <input
+                  type="email"
+                  placeholder="Enter Email"
+                  className="flex-grow px-4 py-4 focus:outline-none"
+                />
+                <button className="bg-customSecondary text-white hover:bg-customDark font-semibold px-6 py-3 md:rounded-none rounded-lg transition-colors duration-500 ease-in-out">
+                  SUBSCRIBE
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
+      </section>
     </>
   );
 }

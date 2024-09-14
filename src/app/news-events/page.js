@@ -54,7 +54,7 @@ function Page() {
   return (
     <>
     <section className="bg-[#F9F9F9] py-10">
-  <div className="container mx-auto md:p-8 p-4 pt-[150px] md:pt-[130px]">
+  <div className="container mx-auto md:p-12 p-10 pt-[150px] md:pt-[130px]">
   <h1 className="text-2xl lg:text-4xl text-center md:text-start font-bold mb-4">News & Events</h1>
     <p className="text-gray-600 mb-8 text-center md:text-start">Stay updated with the latest happenings and upcoming events from SmartCare HIMS!</p>
 
@@ -78,7 +78,7 @@ function Page() {
                   <span>Posted by: {event.author}</span>
                 </div>
                 <p className="text-gray-600 mb-4">{event.description}</p>
-                <a href={event.getLink()} className="text-[#61a3f8] hover:text-[#207EF7] font-semibold">
+                <a href={event.getLink()} className="text-[#61a3f8] hover:text-customSecondary font-semibold">
                   Read More »
                 </a>
               </div>
@@ -94,7 +94,7 @@ function Page() {
     <input 
       type="text" 
       placeholder="Find Something..." 
-      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#61a3f8]"
+      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-customPrimary"
     />
   </div>
   <div>
@@ -120,7 +120,7 @@ function Page() {
 </section>
 
 <section className="md:py-[50px] py-10">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8 p-4 md:p-8">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8 p-10 md:p-12">
           <div className="w-full md:w-1/2 lg:w-2/3">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#3D3D3D]">
               Let us know how we can help you.
@@ -128,7 +128,7 @@ function Page() {
             <p className="text-base text-[#3D3D3D] pb-8">
               You can send an email to{" "}
               <a href="#">
-                <span className="text-[#61a3f8]">info@danphehealth.com</span>
+                <span className="text-customPrimary">info@danphehealth.com</span>
               </a>
             </p>
             <form className="space-y-3">
@@ -209,9 +209,9 @@ function Page() {
               </div>
 
               <div className="text-start">
-                <button
+              <button
                   type="submit"
-                  className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"
+                  className="px-6 py-2 bg-customSecondary text-white rounded-md hover:bg-customDark transition-colors duration-500 ease-in-out"
                 >
                   Send Message
                 </button>
@@ -234,7 +234,7 @@ function Page() {
       </section>
 
       <section>
-  <div className="container mx-auto md:p-8 p-4">
+  <div className="container mx-auto md:p-12 p-4">
     <div className="rounded-2xl flex flex-col md:flex-row justify-between items-center bg-[#F9F9F9] py-10">
       <div className="w-full md:w-1/4 mb-6 md:mb-0 hidden md:block">
         <Image
@@ -248,7 +248,7 @@ function Page() {
 
       <div className="w-full md:w-2/3 text-start md:text-left p-4">
         <h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
-          <span className="text-[#61a3f8]">
+          <span className="text-customPrimary">
             Subscribe for a Transformative Demo
           </span>
           <br />
@@ -266,7 +266,7 @@ function Page() {
             placeholder="Enter Email"
             className="flex-grow px-4 py-4 focus:outline-none"
           />
-          <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 md:rounded-none rounded-lg">
+            <button className="bg-customSecondary text-white hover:bg-customDark font-semibold px-6 py-3 md:rounded-none rounded-lg transition-colors duration-500 ease-in-out">
             SUBSCRIBE
           </button>
         </div>

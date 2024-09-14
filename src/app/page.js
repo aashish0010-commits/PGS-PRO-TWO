@@ -162,8 +162,8 @@ function Page() {
 
   return (
     <>
-      <section className="">
-        <div className="container mx-auto p-4 md:px-8 md:pt-[180px] pt-[220px]">
+      <section className="bg-[#F2FBF8]">
+        <div className="container mx-auto p-7 md:px-12 md:pt-[140px] pt-[220px]">
           <Swiper
             slidesPerView={1}
             spaceBetween={30}
@@ -173,7 +173,7 @@ function Page() {
             }}
             navigation={false}
             autoplay={{
-              delay: 2500,
+              delay: 4000,
               disableOnInteraction: false,
             }}
             modules={[Pagination, Navigation, Autoplay]}
@@ -190,11 +190,11 @@ function Page() {
                     Health Care Solutions
                   </h4>
                   <div>
-                    <button className="mt-5 py-3 px-3 rounded-md bg-[#207EF7] text-white hover:bg-[#07092B]">
+                    <button className="mt-5 py-3 px-3 rounded-md bg-customSecondary text-white hover:bg-customDark transition-colors duration-500 ease-in-out">
                       <i className="bi bi-calendar2-minus-fill pr-2"></i>
                       Schedule a Demo
                     </button>
-                    <button className="mt-5 py-3 px-4 rounded-md border border-[#207EF7] text-[#207EF7] hover:bg-[#07092B] ml-3 hover:text-white hover:border-transparent">
+                    <button className="mt-5 py-3 px-4 rounded-md border border-customSecondary text-customSecondary hover:bg-customDark ml-3 hover:text-white hover:border-transparent transition-colors duration-500 ease-in-out">
                       Learn More
                     </button>
                   </div>
@@ -214,7 +214,7 @@ function Page() {
                 <div>
                   <h2 className="md:font-bold font-extrabold md:text-5xl text-3xl text-[#3D3D3D]">
                     What values{" "}
-                    <span className="text-[#6A99F0]">
+                    <span className="text-customPrimary">
                       SmartCare Connect <br /> can ADD
                     </span>{" "}
                     to your <br />
@@ -222,21 +222,21 @@ function Page() {
                   </h2>
                   <div className="md:w-2/3 w-3/3 pt-5 space-y-5">
                     <h4>
-                      <i className="bi bi-arrow-right-square-fill pr-3 text-[#207EF7]"></i>
+                      <i className="bi bi-arrow-right-square-fill pr-3 text-customSecondary"></i>
                       Help our customer to take a lead in their business using
                       information technology
                     </h4>
                     <h4>
-                      <i className="bi bi-arrow-right-square-fill pr-3 text-[#207EF7]"></i>
+                      <i className="bi bi-arrow-right-square-fill pr-3 text-customSecondary"></i>
                       Time tested products to increase customer operation
                       efficiency immediately
                     </h4>
                   </div>
-                  <button className="mt-5 py-3 px-3 rounded-md bg-[#207EF7] text-white hover:bg-[#07092B]">
+                  <button className="mt-5 py-3 px-3 rounded-md bg-customSecondary text-white hover:bg-[#07092B] transition-colors duration-500 ease-in-out">
                     <i className="bi bi-calendar2-minus-fill pr-2"></i>
                     Schedule a Demo
                   </button>
-                  <button className="mt-5 py-3 px-4 rounded-md border border-[#207EF7] text-[#207EF7] hover:bg-[#07092B] ml-3 hover:text-white hover:hover:border-transparent">
+                  <button className="mt-5 py-3 px-4 rounded-md border border-customSecondary text-customSecondary hover:bg-customDark ml-3 hover:text-white hover:hover:border-transparent transition-colors duration-500 ease-in-out">
                     Learn More
                   </button>
                 </div>
@@ -260,11 +260,11 @@ function Page() {
                     Trusted by Top Hospitals. Used in 53+ Hospitals and growing
                     more?
                   </h4>
-                  <button className="mt-5 py-3 px-3 rounded-md bg-[#207EF7] text-white hover:bg-[#07092B]">
+                  <button className="mt-5 py-3 px-3 rounded-md bg-customSecondary text-white hover:bg-customDark transition-colors duration-500 ease-in-out">
                     <i className="bi bi-calendar2-minus-fill pr-2"></i>
                     Schedule a Demo
                   </button>
-                  <button className="mt-5 py-3 px-4 rounded-md border border-[#207EF7] text-[#207EF7] hover:bg-[#07092B] ml-3 hover:text-white hover:border-transparent">
+                  <button className="mt-5 py-3 px-4 rounded-md border border-customSecondary text-customSecondary hover:bg-customDark ml-3 hover:text-white hover:border-transparent transition-colors duration-500 ease-in-out">
                     Learn More
                   </button>
                 </div>
@@ -282,9 +282,8 @@ function Page() {
         </div>
       </section>
 
-      {/* ... */}
       <section className="md:py-[50px]">
-        <div className="container mx-auto md:p-8 p-4  text-center">
+        <div className="container mx-auto md:p-8 p-8  text-center">
           <div className="flex flex-col items-center">
             <h1 className="text-3xl md:text-3xl lg:text-5xl font-bold text-[#3D3D3D]">
               Discover a complete solution for HIMS with EMR
@@ -295,8 +294,7 @@ function Page() {
           </div>
         </div>
 
-      {/* ... */}
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto md:px-4 px-8">
           <Swiper
             slidesPerView={2}
             spaceBetween={10}
@@ -322,7 +320,7 @@ function Page() {
             {services.map((service, index) => (
               <SwiperSlide
                 key={index}
-                className={`text-center flex flex-col items-center py-5 relative ${
+                className={`swiper-slide-custom text-center flex flex-col items-center py-5 relative ${
                   index === activeIndex ? "active" : ""
                 }`}
                 onClick={() => setActiveIndex(index)}
@@ -339,7 +337,7 @@ function Page() {
                     src={service.src}
                     alt={service.alt}
                     width={30}
-                    height={30} // Ensure the height is specified
+                    height={30} 
                     className="mx-auto"
                   />
                   <h4
@@ -365,8 +363,8 @@ function Page() {
 
       {/* ... */}
 
-      <section className="md:py-[50px] py-10">
-        <div className="container mx-auto md:p-8 p-4">
+      <section className="md:py-[50px] pt-6">
+        <div className="container mx-auto md:p-12 p-10">
           <div className="flex flex-col-reverse md:flex-row justify-center items-center">
             <div class="w-full md:w-1/2 bg-gray-100 rounded-md shadow-xl shadow-slate-300 px-4 md:relative left-5 py-5 md:py-5">
               <h4 className="text-green-600 font-semibold">OUR MODULE</h4>
@@ -378,7 +376,7 @@ function Page() {
               </p>
               <a
                 href="#"
-                class="bg-[#207EF7] hover:bg-[#07092B] text-white py-2 px-4 rounded transition"
+                class="bg-customSecondary hover:bg-customDark text-white py-2 px-4 rounded transition-colors duration-500 ease-in-out;"
               >
                 View Detail
               </a>
@@ -395,8 +393,8 @@ function Page() {
         </div>
       </section>
 
-      <section className="pb-10 md:pb-0">
-        <div className="container mx-auto md:p-8 p-4">
+      <section className="pb-6 md:pb-0">
+        <div className="container mx-auto md:p-12 p-10">
           <div className="flex flex-col-reverse md:flex-row justify-center items-center bg-white overflow-visible">
             <div className="w-full lg:w-1/2 p-4 md:py-4 bg-gray-100 rounded-md shadow-xl shadow-slate-300 md:relative left-5">
               <div className="flex items-center mb-4">
@@ -430,7 +428,7 @@ function Page() {
               </ul>
               <a
                 href="#"
-                className="mt-6 inline-block bg-[#207EF6] hover:bg-[#07092B] text-white py-2 px-4 rounded transition"
+                className="mt-6 inline-block bg-customSecondary hover:bg-customDark text-white py-2 px-4 rounded transition-colors duration-500 ease-in-out"
               >
                 Explore More
               </a>
@@ -447,7 +445,7 @@ function Page() {
       </section>
 
       <section className="md:py-[50px]">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:p-8 p-4 bg-gray-100">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:p-12 p-10 bg-gray-100">
           <div className="relative rounded-lg overflow-hidden shadow-lg">
             <img
               src="https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -457,7 +455,7 @@ function Page() {
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center px-4 text-white">
               <h2 class="text-xl font-semibold">SmartCare Efficiency</h2>
               <p class="mt-2 text-lg font-bold">Explore more about SmartCare Connect!</p>
-              <button className="mt-6 w-[100px] p-2 text-sm bg-[#207EF6] text-white rounded hover:bg-[#070928]">
+              <button className="mt-6 w-[100px] p-2 text-sm bg-customSecondary text-white rounded hover:bg-[#070928] transition-colors duration-500 ease-in-out">
                 View Detail
               </button>
             </div>
@@ -468,7 +466,7 @@ function Page() {
               <div className="text-green-500 lg:text-3xl text-2xl">
                 <i className="bi bi-download  lg:mr-4 md:mr-2 mr-4"></i>
               </div>
-              <h2 className="lg:text-4xl text-2xl font-bold text-[#207EF6]">
+              <h2 className="lg:text-4xl text-2xl font-bold text-customSecondary">
                 Brochure
               </h2>
             </div>
@@ -476,7 +474,7 @@ function Page() {
               One solution, no software clutter – Comprehensive EHR and HIMS in
               a nutshell.
             </p>
-            <button className="mt-6 px-4 py-2 text-[#207EF6] rounded bg-transparent border border-[#207EF6] hover:bg-[#07092B] hover:text-white hover:border-transparent">
+            <button className="mt-6 px-4 py-2 text-customSecondary rounded bg-transparent border border-customSecondary hover:bg-[#07092B] hover:text-white hover:border-transparent transition-colors duration-500 ease-in-out">
               Download Now
             </button>
           </div>
@@ -486,7 +484,7 @@ function Page() {
               <div className="text-green-500 lg:text-3xl text-2xl ">
                 <i className="bi bi-download lg:mr-4 md:mr-2 mr-4"></i>
               </div>
-              <h2 className="lg:text-4xl text-2xl font-bold text-[#207EF6]">
+              <h2 className="lg:text-4xl text-2xl font-bold text-customSecondary">
                 Presentation
               </h2>
             </div>
@@ -494,7 +492,7 @@ function Page() {
               One solution, no software clutter – Comprehensive EHR and HIMS in
               a nutshell.
             </p>
-            <button className="mt-6 px-4 py-2 text-[#207EF6] rounded bg-transparent border border-[#207EF6] hover:bg-[#07092B] hover:text-white hover:border-transparent">
+            <button className="mt-6 px-4 py-2 text-customSecondary rounded bg-transparent border border-customSecondary hover:bg-[#07092B] hover:text-white hover:border-transparent transition-colors duration-500 ease-in-out">
               Download Now
             </button>
           </div>
@@ -502,7 +500,7 @@ function Page() {
       </section>
 
       <section className="py-10 md:py-0">
-        <div className="container mx-auto md:p-8 p-4">
+        <div className="container mx-auto md:p-8 p-10">
           <div className="flex flex-col items-center text-center">
             <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
               We Provide Trusted and Best Software
@@ -584,7 +582,7 @@ function Page() {
       </section>
 
       <section className="md:py-[50px]">
-        <div className="container flex-col mx-auto md:p-8 p-4 text-center">
+        <div className="container flex-col mx-auto md:p-12 p-10 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
             Access Your Inventory
           </h1>
@@ -690,7 +688,7 @@ function Page() {
       </section>
 
       <section className="bg-[#F2FBF8]">
-        <div className="container mx-auto text-center md:space-y-10 md:p-8 p-4">
+        <div className="container mx-auto text-center md:space-y-10 md:p-8 p-10">
           <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
             Trusted by
           </h1>
@@ -700,21 +698,21 @@ function Page() {
                <a href=""> <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={120} // Adjust the width as needed
-                  height={60} // Adjust the height as needed
+                  width={120} 
+                  height={60} 
                   className="object-contain"
                 /></a>
               </div>
             ))}
           </div>
-          <button className="px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition">
+          <button className="px-6 py-2 bg-customSecondary text-white rounded-full hover:bg-[#070928] transition-colors duration-500 ease-in-out">
             View All <i class="bi bi-arrow-right-short"></i>
           </button>
         </div>
       </section>
 
       <section className="md:py-[50px] py-10">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8 p-4 md:p-8">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8 p-10 md:p-12">
           <div className="w-full md:w-1/2 lg:w-2/3">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#3D3D3D]">
               Let us know how we can help you.
@@ -722,7 +720,7 @@ function Page() {
             <p className="text-base text-[#3D3D3D] pb-8">
               You can send an email to{" "}
               <a href="#">
-                <span className="text-[#61a3f8]">info@danphehealth.com</span>
+                <span className="text-customPrimary">info@danphehealth.com</span>
               </a>
             </p>
             <form className="space-y-3">
@@ -805,7 +803,7 @@ function Page() {
               <div className="text-start">
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"
+                  className="px-6 py-2 bg-customSecondary text-white rounded-md hover:bg-customDark transition-colors duration-500 ease-in-out"
                 >
                   Send Message
                 </button>
@@ -828,7 +826,7 @@ function Page() {
       </section>
 
       <section>
-  <div className="container mx-auto md:p-8 p-4">
+  <div className="container mx-auto md:p-12 p-4">
     <div className="rounded-2xl flex flex-col md:flex-row justify-between items-center bg-[#F9F9F9] py-10">
       <div className="w-full md:w-1/4 mb-6 md:mb-0 hidden md:block">
         <Image
@@ -842,7 +840,7 @@ function Page() {
 
       <div className="w-full md:w-2/3 text-start md:text-left p-4">
         <h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-[#3D3D3D]">
-          <span className="text-[#61a3f8]">
+          <span className="text-customPrimary">
             Subscribe for a Transformative Demo
           </span>
           <br />
@@ -860,7 +858,7 @@ function Page() {
             placeholder="Enter Email"
             className="flex-grow px-4 py-4 focus:outline-none"
           />
-          <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 md:rounded-none rounded-lg">
+          <button className="bg-customSecondary text-white hover:bg-customDark font-semibold px-6 py-3 md:rounded-none rounded-lg transition-colors duration-500 ease-in-out">
             SUBSCRIBE
           </button>
         </div>
