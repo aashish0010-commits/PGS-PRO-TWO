@@ -1,13 +1,20 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import "../../app/Components/Uni.css";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import "../../app/Components/Uni.css";
 
 function Header() {
-  const [activeLink, setActiveLink] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
   const sidebarRef = useRef(null);
+  const router = useRouter();
+  useEffect(() => {
+    const userLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    setIsLoggedIn(userLoggedIn);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -35,11 +42,21 @@ function Header() {
     }
   };
 
+  const handleLogout = () => {
+    // Display the alert message
+    if (window.confirm("Are you sure you want to log out?")) {
+      localStorage.removeItem("isLoggedIn");
+      setIsLoggedIn(false);
+      // Redirect to the Patient Login page
+      router.push("/patient-login");
+    }
+  };
+
+
   return (
     <>
       <section className="fixed top-0 left-0 w-full bg-customDark z-40">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-1 text-xs px-4 md:px-12">
-          {/* Left Section: Contact Info */}
           <div className="text-white mb-3 md:mb-0 hidden md:block">
             <ul className="flex flex-col md:flex-row gap-2 md:gap-6">
               <li>
@@ -86,19 +103,12 @@ function Header() {
 
       <section className="fixed md:top-[40px] top-[50px] left-0 w-full bg-white shadow-md z-30">
         <div className="container mx-auto md:py-1 py-3 md:px-12 px-8 flex justify-between items-center text-sm">
-          <a href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0">
             <Image src="/images/front.png" alt="Logo" width={180} height={0} />
-          </a>
+          </Link>
           <div className="hidden md:flex flex-grow justify-end items-center gap-7">
             <ul className="flex gap-7 nav-item text-xs">
-              {[
-                "/company",
-                "/our-solution",
-                "/our-clients",
-                "/news-events",
-                "/career",
-                "/smart-community",
-              ].map((link) => (
+              {["/company", "/our-solution", "/our-clients", "/news-events", "/career", "/smart-community"].map((link) => (
                 <li key={link}>
                   <Link
                     href={link}
@@ -112,11 +122,42 @@ function Header() {
                 </li>
               ))}
             </ul>
-            <button className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out">
-              <i className="bi bi-calendar2-minus-fill pr-2"></i>
-              Schedule a Demo
-            </button>
+
+            {!isLoggedIn && (
+              <Link
+                href="/doctor-login"
+                className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out"
+              >
+                Login as Doctor
+              </Link>
+            )}
+
+            {isLoggedIn ? (
+              <>
+                <Link
+                  href="/doctor-appointment"
+                  className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out"
+                >
+                  <i className="bi bi-calendar2-minus-fill pr-2" />
+                  Make an Appointment
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="p-3 rounded-md bg-red-600 text-white hover:bg-red-700 text-xs transition-colors duration-500 ease-in-out"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/patient-login"
+                className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out"
+              >
+                Login as Patient
+              </Link>
+            )}
           </div>
+
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -127,7 +168,6 @@ function Header() {
           </div>
         </div>
 
-        {/* Sidebar for mobile and tablet screens */}
         <div
           ref={sidebarRef}
           className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-xl z-50 transform transition-transform duration-500 py-[70px] ease-in-out ${
@@ -165,10 +205,15 @@ function Header() {
                 </li>
               ))}
             </ul>
-            <button className="mt-5 py-3 px-4 rounded-md bg-customDark text-white hover:bg-customSecondary text-start transition-colors duration-500 ease-in-out">
-              <i className="bi bi-calendar2-minus-fill pr-2"></i>
-              Schedule a Demo
-            </button>
+            {isLoggedIn && (
+              <Link
+                href="/doctor-appointment"
+                className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out"
+              >
+                <i className="bi bi-calendar2-minus-fill pr-2" />
+                Make an Appointment
+              </Link>
+            )}
           </div>
         </div>
       </section>
