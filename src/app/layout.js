@@ -7,6 +7,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import FloatingButton from "./Components/FloatingButton";
+import FloatingChat from "./Components/FloatingChat";
 import { usePathname } from 'next/navigation'; // Import usePathname hook
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
   const pathname = usePathname(); // Get the current page path
 
   // Define an array of routes where header and footer should not be shown
-  const noHeaderFooterPaths = ['/patient-login', '/patient-register', '/doctor-login', '/doctor-register', '/doctor-appointment', '/doctor-dashboard'];
+  const noHeaderFooterPaths = ['/patient-login', '/patient-register', '/doctor-login', '/doctor-register', '/doctor-appointment', '/doctor-dashboard', '/doctor-chat'];
 
   // Check if the current path is in the noHeaderFooterPaths array
   const showHeaderFooter = !noHeaderFooterPaths.includes(pathname);
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         {showHeaderFooter && <Header />}
         {children}
         {showHeaderFooter && <FloatingButton />}
+        {showHeaderFooter && <FloatingChat />}
         {showHeaderFooter && <Footer />}
       </body>
     </html>

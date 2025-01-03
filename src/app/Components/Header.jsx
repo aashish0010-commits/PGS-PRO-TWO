@@ -11,10 +11,6 @@ function Header() {
   const [activeLink, setActiveLink] = useState("");
   const sidebarRef = useRef(null);
   const router = useRouter();
-  useEffect(() => {
-    const userLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-    setIsLoggedIn(userLoggedIn);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -41,17 +37,6 @@ function Header() {
       setIsMenuOpen(false);
     }
   };
-
-  const handleLogout = () => {
-    // Display the alert message
-    if (window.confirm("Are you sure you want to log out?")) {
-      localStorage.removeItem("isLoggedIn");
-      setIsLoggedIn(false);
-      // Redirect to the Patient Login page
-      router.push("/patient-login");
-    }
-  };
-
 
   return (
     <>
@@ -123,39 +108,19 @@ function Header() {
               ))}
             </ul>
 
-            {!isLoggedIn && (
               <Link
                 href="/doctor-login"
                 className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out"
               >
                 Login as Doctor
               </Link>
-            )}
 
-            {isLoggedIn ? (
-              <>
-                <Link
-                  href="/doctor-appointment"
-                  className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out"
-                >
-                  <i className="bi bi-calendar2-minus-fill pr-2" />
-                  Make an Appointment
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="p-3 rounded-md bg-red-600 text-white hover:bg-red-700 text-xs transition-colors duration-500 ease-in-out"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
               <Link
                 href="/patient-login"
                 className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out"
               >
                 Login as Patient
               </Link>
-            )}
           </div>
 
           <div className="md:hidden">
@@ -205,7 +170,7 @@ function Header() {
                 </li>
               ))}
             </ul>
-            {isLoggedIn && (
+            
               <Link
                 href="/doctor-appointment"
                 className="p-3 rounded-md bg-customDark text-white hover:bg-customSecondary text-xs transition-colors duration-500 ease-in-out"
@@ -213,7 +178,6 @@ function Header() {
                 <i className="bi bi-calendar2-minus-fill pr-2" />
                 Make an Appointment
               </Link>
-            )}
           </div>
         </div>
       </section>

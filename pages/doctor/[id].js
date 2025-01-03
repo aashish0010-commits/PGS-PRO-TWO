@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { FaPaperPlane, FaPaperclip, FaMicrophone } from "react-icons/fa";
 
 const DoctorProfile = () => {
   const router = useRouter();
@@ -8,6 +9,9 @@ const DoctorProfile = () => {
   const [loading, setLoading] = useState(true);
   const [patients, setPatients] = useState([]);
   const [activeSection, setActiveSection] = useState("Profile Overview"); // State to track active section
+  const [messages, setMessages] = useState([]);
+  const [inputMessage, setInputMessage] = useState("");
+
 
   useEffect(() => {
     if (id) {
@@ -43,6 +47,20 @@ const DoctorProfile = () => {
       }
     } catch (error) {
       console.error("Error fetching patients:", error);
+    }
+  };
+
+  const handleSendMessage = () => {
+    if (inputMessage.trim()) {
+      setMessages([...messages, { type: "text", content: inputMessage }]);
+      setInputMessage("");
+    }
+  };
+
+  const handleAttachment = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setMessages([...messages, { type: "file", content: file.name }]);
     }
   };
 
@@ -112,6 +130,44 @@ const DoctorProfile = () => {
             )}
           </div>
         );
+        case "Chat":
+          return (
+            <div style={styles.chatContainer}>
+              <div style={styles.chatHeader}>Doctor-Patient Chat</div>
+              <div style={styles.chatBody}>
+                {messages.map((message, index) => (
+                  <div key={index} style={styles.chatMessage}>
+                    {message.type === "text" && <p style={styles.textMessage}>{message.content}</p>}
+                    {message.type === "file" && (
+                      <p style={styles.fileMessage}>
+                        <strong>File:</strong> {message.content}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div style={styles.chatFooter}>
+                <label style={styles.button}>
+                  <FaPaperclip />
+                  <input type="file" onChange={handleAttachment} hidden />
+                </label>
+                <input
+                  type="text"
+                  placeholder="Type your message..."
+                  value={inputMessage}
+                  onChange={(e) => setInputMessage(e.target.value)}
+                  style={styles.input}
+                />
+                <button style={styles.button} onClick={handleSendMessage}>
+                  <FaPaperPlane />
+                </button>
+                <button style={styles.button}>
+                  <FaMicrophone />
+                </button>
+              </div>
+            </div>
+          );
+
       case "Settings":
         return <div style={styles.card}>Settings section content goes here.</div>;
       case "Logout":
@@ -134,7 +190,7 @@ const DoctorProfile = () => {
       <aside style={styles.sidebar}>
         
         <ul style={styles.sidebarMenu}>
-          {["Profile Overview", "Patients", "Settings", "Logout"].map((item) => (
+          {["Profile Overview", "Patients", "Chat", "Settings", "Logout"].map((item) => (
             <li
               key={item}
               style={{
@@ -149,24 +205,26 @@ const DoctorProfile = () => {
         </ul>
       </aside>
       <main style={styles.mainContent}>
-        <header style={styles.header}>
-          <div style={styles.leftHeader}>
-            <h1 style={styles.pageTitle}>
-              <span style={styles.welcomeText}>Welcome,</span> Dr. {doctor.fullName}
-            </h1>
-          </div>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <div style={{ width: "100px", height: "100px", overflow: "hidden", borderRadius: "50%" }}>
-              <img
-                src="https://th.bing.com/th/id/OIP.Z-jIioX1b136277SvqD10QHaHx?rs=1&pid=ImgDetMain"
-                alt="Profile"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
-          </div>
-        </header>
-        {renderSection()}
-      </main>
+  {activeSection !== "Chat" && (
+    <header style={styles.header}>
+      <div style={styles.leftHeader}>
+        <h1 style={styles.pageTitle}>
+          <span style={styles.welcomeText}>Welcome,</span> Dr. {doctor.fullName}
+        </h1>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ width: "100px", height: "100px", overflow: "hidden", borderRadius: "50%" }}>
+          <img
+            src="https://th.bing.com/th/id/OIP.Z-jIioX1b136277SvqD10QHaHx?rs=1&pid=ImgDetMain"
+            alt="Profile"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
+      </div>
+    </header>
+  )}
+  {renderSection()}
+</main>
     </div>
     </>
   );
@@ -288,6 +346,29 @@ const styles = {
   sidebarHeader: {
     backgroundColor: "#fff",
 },
+chatContainer: { display: "flex", flexDirection: "column", height: "80%" },
+chatHeader: { 
+  padding: "10px", 
+  backgroundColor: "#34495e", 
+  color: "white", 
+  fontSize: "24px", // Adjust the size as needed
+  textAlign: "center" 
+},
+chatBody: { flex: 1, padding: "10px", overflowY: "auto", backgroundColor: "#ecf0f1" },
+chatMessage: { margin: "10px 0" },
+textMessage: { padding: "10px", backgroundColor: "#3498db", color: "white", borderRadius: "5px" },
+fileMessage: { padding: "10px", backgroundColor: "#e67e22", color: "white", borderRadius: "5px" },
+chatFooter: { display: "flex", alignItems: "center", padding: "10px", backgroundColor: "#bdc3c7" },
+button: {
+  backgroundColor: "#34495e",
+  color: "white",
+  border: "none",
+  padding: "10px",
+  borderRadius: "5px",
+  cursor: "pointer",
+  marginRight: "10px",
+},
+input: { flex: 1, padding: "10px", borderRadius: "5px", border: "1px solid #bdc3c7" },
 };
 
 export default DoctorProfile;

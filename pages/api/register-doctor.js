@@ -1,3 +1,4 @@
+
 import mysql from 'mysql2/promise';
 import bcrypt from 'bcryptjs'; // For password hashing
 
@@ -52,6 +53,15 @@ export default async function handler(req, res) {
     } catch (error) {
       console.error('Database Error:', error);
       res.status(500).json({ error: 'Error registering doctor' });
+    }
+  } else if (req.method === 'GET') {
+    try {
+      // Fetch all doctors from the database
+      const [rows] = await db.execute('SELECT id, fullName FROM doctors');
+      res.status(200).json({ doctors: rows });
+    } catch (error) {
+      console.error('Database Error:', error);
+      res.status(500).json({ error: 'Error fetching doctors' });
     }
   } else {
     res.status(405).json({ error: 'Method Not Allowed' });
