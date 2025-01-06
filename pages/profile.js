@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComments } from '@fortawesome/free-solid-svg-icons';
 
 function Profile() {
   const router = useRouter();
@@ -172,6 +174,27 @@ function Profile() {
             Logout
           </button>
         </div>
+        {/* Bottom-left Chat Icon */}
+<div>
+    <Link href="/chat-login" style={{
+        position: 'fixed',
+        bottom: '20px',
+        left: '320px',
+        width: '80px',
+        height: '80px',
+        borderRadius: '50%',
+        backgroundColor: '#2b6cb0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        cursor: 'pointer',
+        color: 'white',
+        fontSize: '24px',
+      }}>
+        <FontAwesomeIcon icon={faComments} />
+      </Link>
+</div>
 
         {/* Main Content */}
         <div style={{ flex: '1', padding: '24px', backgroundColor: '#fff' }}>

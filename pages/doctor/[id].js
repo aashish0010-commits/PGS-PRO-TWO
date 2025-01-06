@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { FaPaperPlane, FaPaperclip, FaMicrophone } from "react-icons/fa";
+import Link from "next/link";
+import { FaPaperPlane, FaPaperclip, FaMicrophone,} from "react-icons/fa";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComments } from '@fortawesome/free-solid-svg-icons';
 
 const DoctorProfile = () => {
   const router = useRouter();
@@ -130,43 +133,6 @@ const DoctorProfile = () => {
             )}
           </div>
         );
-        case "Chat":
-          return (
-            <div style={styles.chatContainer}>
-              <div style={styles.chatHeader}>Doctor-Patient Chat</div>
-              <div style={styles.chatBody}>
-                {messages.map((message, index) => (
-                  <div key={index} style={styles.chatMessage}>
-                    {message.type === "text" && <p style={styles.textMessage}>{message.content}</p>}
-                    {message.type === "file" && (
-                      <p style={styles.fileMessage}>
-                        <strong>File:</strong> {message.content}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-              <div style={styles.chatFooter}>
-                <label style={styles.button}>
-                  <FaPaperclip />
-                  <input type="file" onChange={handleAttachment} hidden />
-                </label>
-                <input
-                  type="text"
-                  placeholder="Type your message..."
-                  value={inputMessage}
-                  onChange={(e) => setInputMessage(e.target.value)}
-                  style={styles.input}
-                />
-                <button style={styles.button} onClick={handleSendMessage}>
-                  <FaPaperPlane />
-                </button>
-                <button style={styles.button}>
-                  <FaMicrophone />
-                </button>
-              </div>
-            </div>
-          );
 
       case "Settings":
         return <div style={styles.card}>Settings section content goes here.</div>;
@@ -190,7 +156,7 @@ const DoctorProfile = () => {
       <aside style={styles.sidebar}>
         
         <ul style={styles.sidebarMenu}>
-          {["Profile Overview", "Patients", "Chat", "Settings", "Logout"].map((item) => (
+          {["Profile Overview", "Patients", "Settings", "Logout"].map((item) => (
             <li
               key={item}
               style={{
@@ -225,6 +191,26 @@ const DoctorProfile = () => {
   )}
   {renderSection()}
 </main>
+<div>
+    <Link href="/doctor-chat-login" style={{
+        position: 'fixed',
+        bottom: '20px',
+        left: '320px',
+        width: '80px',
+        height: '80px',
+        borderRadius: '50%',
+        backgroundColor: '#2b6cb0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        cursor: 'pointer',
+        color: 'white',
+        fontSize: '24px',
+      }}>
+        <FontAwesomeIcon icon={faComments} />
+      </Link>
+</div>
     </div>
     </>
   );

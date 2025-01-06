@@ -47,7 +47,7 @@ export default async function handler(req, res) {
             ...appointment,
             doctorName: doctor[0]?.fullName || 'Unknown',
             doctorEmail: doctor[0]?.email || 'Unknown',
-            doctorphonenumber: doctor[0]?.phoneNumber || 'Unknown',
+            doctorphonenumber: doctor[0]?.phoneNumber || '+977 98********',
             appointment_date: appointment.appointment_date,
             appointment_time: appointment.appointment_time,
           };

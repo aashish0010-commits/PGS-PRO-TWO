@@ -1,13 +1,15 @@
-
 import mysql from 'mysql2/promise';
 import bcrypt from 'bcryptjs'; // For password hashing
 
+// Create a database connection
 const db = await mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
   database: 'doctor_registration',
 });
+
+// Ensure the database connection is established
 db.connect();
 
 export default async function handler(req, res) {
@@ -24,11 +26,18 @@ export default async function handler(req, res) {
     } = req.body;
 
     try {
-      // Check if doctor already exists by email
-      const [rows] = await db.execute('SELECT * FROM doctors WHERE email = ?', [email]);
 
-      if (rows.length > 0) {
-        return res.status(400).json({ error: 'Doctor with this email already exists' });
+      // Check if a doctor with unique fields already exists
+      const [existingDoctors] = await db.execute(
+        `SELECT * FROM doctors 
+         WHERE email = ? OR phoneNumber = ? OR nmcNumber = ? OR citizenshipNumber = ?`,
+        [email, phoneNumber, nmcNumber, citizenshipNumber]
+      );
+
+      if (existingDoctors.length > 0) {
+        return res
+          .status(400)
+          .json({ error: 'Doctor with the provided email, phone, NMC, or citizenship already exists' });
       }
 
       // Hash the password
@@ -36,15 +45,17 @@ export default async function handler(req, res) {
 
       // Insert the doctor into the database
       await db.execute(
-        'INSERT INTO doctors (fullName, address, email, phoneNumber, nmcNumber, citizenshipNumber, speciality, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+        `INSERT INTO doctors 
+        (fullName, address, email, phoneNumber, nmcNumber, citizenshipNumber, speciality, password) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           fullName,
-          address,
+          address || null, // Address is optional
           email,
           phoneNumber,
           nmcNumber,
           citizenshipNumber,
-          speciality,
+          speciality || null, // Speciality is optional
           hashedPassword,
         ]
       );
@@ -56,7 +67,7 @@ export default async function handler(req, res) {
     }
   } else if (req.method === 'GET') {
     try {
-      // Fetch all doctors from the database
+      // Fetch all doctors with minimal information
       const [rows] = await db.execute('SELECT id, fullName FROM doctors');
       res.status(200).json({ doctors: rows });
     } catch (error) {
